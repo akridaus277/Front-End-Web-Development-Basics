@@ -47,6 +47,7 @@ div.absolute{
     /* padding adalah jarak antar border ke isi box box*/
     padding: 30px;
     position: absolute;
-    bottom: 0px;
+    
     right:30px;
+    top:20px;
 }
