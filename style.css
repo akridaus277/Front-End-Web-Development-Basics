@@ -1,0 +1,52 @@
+div{
+    border: 1px solid red;
+    /* margin adalah jarak antar border ke luar box*/
+    margin: 30px;
+    /* padding adalah jarak antar border ke isi box box*/
+    padding: 30px;
+
+}
+body{
+    height: 200vh;
+}
+/*position static adalah posisi default nya html*/
+div.static{
+    border: 1px solid red;
+    /* margin adalah jarak antar border ke luar box*/
+    margin: 30px;
+    /* padding adalah jarak antar border ke isi box box*/
+    padding: 30px;
+    position: static;
+    
+}
+/*position relative adalah posisi bisa digeser kanan kiri atas bawah*/
+div.relative{
+    border: 1px solid red;
+    /* margin adalah jarak antar border ke luar box*/
+    margin: 30px;
+    /* padding adalah jarak antar border ke isi box box*/
+    padding: 30px;
+    position: relative;
+    left: 50px;
+}
+/*position fixed adalah posisi fix tapi kalo discroll ikut*/
+div.fixed{
+    border: 1px solid red;
+    /* margin adalah jarak antar border ke luar box*/
+    margin: 30px;
+    /* padding adalah jarak antar border ke isi box box*/
+    padding: 30px;
+    position: fixed;
+    bottom: 0px;
+}
+/*position fixed adalah posisi fix tapi kalo discroll tidak ikut*/
+div.absolute{
+    border: 1px solid red;
+    /* margin adalah jarak antar border ke luar box*/
+    margin: 30px;
+    /* padding adalah jarak antar border ke isi box box*/
+    padding: 30px;
+    position: absolute;
+    bottom: 0px;
+    right:30px;
+}
