@@ -2,12 +2,89 @@
 <html lan="en">
     <head>
         <title>
-            Document
+            Float Layout
         </title>
-        <link rel="stylesheet" href="./style-4-1.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, inisitial-scale=1.0">
+        <!-- <link rel="stylesheet" href="./style-4-1.css"> -->
+        <style>
+            * {
+                box-sizing: border-box;
+                
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            /* header style*/
+            header {
+                background-color: green;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            /* nav style */
+            nav {
+                float: left;
+                width: 30%;
+                height: 300px;
+                color: white;
+            }
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            article{
+                float: left;
+                padding: 20px;
+                width:70%;
+                background-color: yellowgreen;
+                height: 300px;
+            }
+
+            section::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+            footer{
+                background-color: aqua;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            @media screen and (max-width: 800px) {
+            article {
+                width: 100%;
+                height: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+}
+
+        </style>
     </head>
-    <header></header>
-    <sidebar></sidebar>
-    <content></content>
-    <footer></footer>
+    <body>
+        <header>
+            <h2>Header</h2>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="#">Menu-1</a></li>
+                    <li><a href="#">Menu-2</a></li>
+                    <li><a href="#">Menu-3</a></li>
+                </ul>
+            </nav>
+            <article>
+                <h1>Artikel 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod sit amet leo condimentum ullamcorper. Sed at odio luctus, pulvinar lacus id, auctor neque. In hac habitasse platea dictumst. In vel enim augue. Sed dignissim lacinia leo, porttitor interdum dui rhoncus elementum. Pellentesque et mollis mi. Quisque vehicula arcu ut lacus accumsan mollis. Aliquam ac justo sed ipsum molestie molestie. Ut non consectetur nisl. Praesent ut metus eget felis suscipit sagittis.</p>
+                <p>Mauris dignissim molestie felis et vulputate. Nam mollis blandit mattis. Aenean in ex mi. Maecenas rutrum sem augue, vitae tempor velit porttitor ut. Vestibulum ullamcorper posuere augue, eu rutrum nisi aliquam id. Duis laoreet dui id enim tincidunt, a sodales ante accumsan. Vestibulum ac lorem justo. Cras iaculis metus sed massa elementum finibus. Praesent metus libero, facilisis ac erat vitae, porta facilisis dolor.</p>
+            </article>
+        </section>
+        <footer>
+            <h1>Footer</h1>
+            <p>Mauris dignissim molestie felis et vulputate. Nam mollis blandit mattis. Aenean in ex mi. Maecenas rutrum sem augue, vitae tempor velit porttitor ut. Vestibulum ullamcorper posuere augue, eu rutrum nisi aliquam id. Duis laoreet dui id enim tincidunt, a sodales ante accumsan. Vestibulum ac lorem justo. Cras iaculis metus sed massa elementum finibus. Praesent metus libero, facilisis ac erat vitae, porta facilisis dolor.</p>
+        </footer>
+
+    </body>
+    
 </html>
