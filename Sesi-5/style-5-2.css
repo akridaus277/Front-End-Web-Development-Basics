@@ -1,0 +1,15 @@
+div p{
+    color: violet;
+}
+
+p{
+    color: purple;
+}
+
+#idUnique{
+    color: aqua;
+}
+
+.classUnique{
+    color: khaki;
+}

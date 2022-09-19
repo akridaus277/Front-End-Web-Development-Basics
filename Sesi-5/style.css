@@ -1,0 +1,118 @@
+html{
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+
+}
+:root{
+    --font-color: white;
+
+
+}
+.grid-container{
+    display: grid;
+    background-color: aqua;
+    background-color: lightcoral;
+    background: rgba(63,94,251,1);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    grid-template-areas: 
+    'box-header box-header box-header box-header box-header box-header box-header'
+    'box-menu box-menu box-menu box-main box-main box-right box-right'
+    'box-menu box-menu box-menu box-main box-main box-right box-right'
+    'box-menu box-menu box-menu box-main box-main box-right box-right'
+    'box-menu box-menu box-menu  box-footer box-footer box-footer box-footer'
+    ;
+
+}
+#header-container{
+    /* border: 2PX SOLID red; */
+    display: grid;
+    background-color: #e65856;
+    padding: 10px;
+    grid-template-areas: 
+    'box-logo box-space box-home box-docs box-pricing box-contact box-search box-searchButton'
+    ;
+
+}
+.box-logo{
+    background-color: orange;
+    grid-area: box-logo;
+    text-align: center;
+}
+.box-home{
+    background-color: orange;
+    grid-area: box-home;
+    text-align: center;
+}
+.box-docs{
+    background-color: orange;
+    grid-area: box-docs;
+    text-align: center;
+}
+.box-pricing{
+    background-color: orange;
+    grid-area: box-pricing;
+    text-align: center;
+}
+.box-contact{
+    background-color: orange;
+    grid-area: box-contact;
+    text-align: center;
+}
+.box-header,.box-menu,.box-main,.box-right,.box-footer{
+    color: black;
+    padding: 20px 0;
+
+}
+.box-space{
+    width: 2%;
+    grid-area: box-space;
+}
+.box-search{
+    color: var(--font-color);
+    background-color: orange;
+    grid-area: box-search;
+    text-align: center;
+}
+.box-searchButton{
+    color: var(--font-color);
+    background-color: orange;
+    grid-area: box-searchButton;
+    text-align: center;
+}
+.box-header{
+    color: var(--font-color);
+    grid-area: box-header;
+    text-align: center;
+}
+.box-menu{
+    color: var(--font-color);
+    width: 20vw;
+    grid-area: box-menu;
+    text-align: center;
+}
+.box-main{
+    color: var(--font-color);
+    color: white;
+    width: 60vw;
+    height: 80vh;
+    grid-area: box-main;
+    text-align: center;
+}
+.box-right{
+    color: var(--font-color);
+    width: 20vw;
+    grid-area: box-right;
+    text-align: center;
+}
+.box-footer{
+    color: var(--font-color);
+    grid-area: box-footer;
+    text-align: center;
+}

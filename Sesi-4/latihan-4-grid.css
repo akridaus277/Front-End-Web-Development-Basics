@@ -21,7 +21,6 @@ h1,h2,h3,h4,h5,h6{
 .grid-container{
     display: grid;
     background-color: aqua;
-    padding: 10px;
     grid-template-areas: 
     'box-header box-header box-header box-header box-header box-header box-header'
     'box-menu box-menu box-main box-main box-main box-right box-right'
@@ -31,7 +30,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .box-header,.box-menu,.box-main,.box-right,.box-footer{
     color: white;
-    padding: 20px 0;
+
 
 }
 .box-header{
