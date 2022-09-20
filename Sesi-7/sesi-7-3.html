@@ -8,9 +8,11 @@
     </head>
     <body>
         <h1>Latihan JQuery</h1>
-        <div id="text1"></div>
-        <div id="text2"></div>
+        <div id="text1" class="pagi"></div>
+        <div id="text2" class="sore"></div>
         <img>
+        <div id="hiden">element ini harus dihide</div>
+        <input id="forminput"></input>
         <script
             src="https://code.jquery.com/jquery-3.6.1.js"
             integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -20,10 +22,16 @@
             $('#text2').html('<a>ashdasdi</a>');
             $('#text1').css({"background-color": "black", "color": "violet"});
             var nama = "akri";
-            $('#text1').append("<p id='tes'>test append '${nama}'</p>");
+            $('#text1').append("<p id='tes'>test append "+nama+"</p>");
             $('#text1').prepend("<p>test prepend</p>");
             $('#tes').css("color", "white");
             $('img').attr("src", "https://www.w3schools.com/jquery/img_pulpitrock.jpg");
+            $('#hiden').hide();
+            $('#text1').addClass('siang');
+            $('#text2').removeClass('sore');
+            $('#forminput').val('hore istirahat');
+            var cekClass = $('#text2').hasClass('sore');
+            console.log(cekClass);
 
         </script>
     </body>
