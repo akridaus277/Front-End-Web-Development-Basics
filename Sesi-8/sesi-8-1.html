@@ -15,6 +15,8 @@
             var sim = false;
             var a = 4;
             var b = 5;
+            var height = 120;
+            var width = 140;
             if(number>5){
                 console.log("benar");
             }else{
@@ -37,6 +39,27 @@
             }else{
                 console.log("a tidak sama dengan b 'pake logic or'");
             }
+            switch(height){
+                case 120:
+                    console.log("tingginya 120");
+                    break;
+                case 150:
+                    console.log("tingginya 150");
+                    break;
+                default:
+                    console.log("ini balasan default");
+                    break;
+            }
+            console.log(height>120 ? "lebih dari 120" : height==120 ? "tepat 120" : "kurang dari 120");
+            if(height== 120){
+                if(height < width){
+                    console.log("height = 200 , lalu height < width");
+                }else if(height > width){
+                    console.log("height = 200 , lalu height > width");
+                }
+            }
+            var nama = "akri";
+            console.log("nama saya ${nama}");
 
         </script>
     </body>
