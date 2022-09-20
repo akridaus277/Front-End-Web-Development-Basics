@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            Catch Input Data Form
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="./style-5-1.css"> -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <main class="container p-5">
+            <form>
+                <label for="username" >Username</label>
+                <input type="text" placeholder="Username" class="form-control mb-4" id="username">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    class="form-control mb-4"
+                    id="password">
+                <p id="warn"></p>
+                <button class="btn btn-primary" id="submit">Submit</button>
+            </form>
+            
+        </main>
+
+        <script>
+            document.getElementById('submit').onclick = function(e){
+                e.preventDefault();
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                if(username == "orang" && password == "123"){
+                    alert("Berhasil masuk");
+                    document.getElementById("warn").innerHTML = "Berhasil masuk";
+                }else{
+                    alert("Username atau password salah");
+                    document.getElementById("warn").innerHTML = "Gagal masuk";
+                }
+                // console.log(document.getElementById('username').value);
+            };
+        </script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
