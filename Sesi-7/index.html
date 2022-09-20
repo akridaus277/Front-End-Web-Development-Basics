@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            JS Exercise
+        </title>
+
+
+    </head>
+    <body>
+        <div id="greeting"></div>
+        <p> senang bisa kedatangan pengunjung dari <span id="hometown"></span></p>
+           
+
+        <script>
+        var visitor_name = prompt("Silahkan masukkan nama kamu");
+        var welcome_message = "Halo kak "+visitor_name+", selamat datang di website kami";
+        //query selector html
+        document.querySelector("div#greeting").textContent=welcome_message;
+        var town = prompt("Dari mana asal kotamu?");
+        document.querySelector("span#hometown").textContent=town;
+
+
+        </script>
+
+    </body>
+
+</html>
