@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            Assignment 10-4
+        </title>
+        <link rel="stylesheet" href="./style-assignment-10.css">
+
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="./index.html">Index</a>
+            <a href="./assignment-10-1.html">10-1</a>
+            <a href="./assignment-10-2.html">10-2</a>
+            <a href="./assignment-10-3.html">10-3</a>
+            <a href="./assignment-10-4.html">10-4</a>
+            <a class="active" href="./assignment-10-5.html">10-5</a>
+        </div>
+        <div style="padding-left:16px">
+            <h1>Assignment 10-5</h1>
+            <p>Silahkan lihat console untuk melihat hasil</p>
+            <p>Bebas menggunakan while atau for, buatlah sebuah perulangan yang akan
+                menampilkan huruf O seperti di bawah ini:
+                <br>
+                OOOO
+                <br>
+                OOOO
+                <br>
+                OOOO
+                <br>
+                OOOO
+                <br>
+                Tapi dengan syarat, kamu harus menggunakan looping untuk menampilkan bentuk di
+                bawah ini! Be creative! Pikirkan bagaimana kalau kita harus menampilkan 100 "O"
+                ke samping dengan 100 baris?</p>
+        </div>
+
+        <script>
+            //Tugas 4
+            var jumlah = prompt("Ingin berapa kali huruf O berulang? ");
+            while (isNaN(jumlah)) {
+                alert("Harap masukkan angka, silahkan input ulang");
+                jumlah = prompt("Ingin berapa kali huruf O berulang? ");
+            }
+            var kalimat = '';
+            for (var i = 1; i <= jumlah; i++) {
+                kalimat = kalimat + 'O';
+            }
+            for (var i = 1; i <= jumlah; i++) {
+                console.log(kalimat);
+            }
+        </script>
+    </body>
+
+</html>

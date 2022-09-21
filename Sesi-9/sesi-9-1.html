@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            Sesi 9-1
+        </title>
+
+    </head>
+    <body>
+        <script>
+            //cetak angka genap 1-10
+            // var angka = 1;
+            // while (angka <= 10) {
+            //     if(angka % 2 == 0){
+            //         console.log("cetak angka ke " + angka);
+            //     }
+                
+            //     angka++;
+
+            // }
+
+            //cetak angka ganjil 1-10
+            // var angka = 1;
+            // while (angka <= 10) {
+            //     if(angka % 2 != 0){
+            //         console.log("cetak angka ke " + angka);
+            //     }
+                
+            //     angka++;
+
+            // }
+
+            // Looping Mengembalikan Angka Total
+            // var deret = 5;
+            // var jumlah = 0;
+            // while(deret > 0){
+            //     jumlah += deret;
+            //     deret--;
+            //     console.log("Jumlah saat ini : "+jumlah);
+            // }
+
+            // for loop cetak angka 1-10
+            // var angka=1;
+            // for(angka;angka<=10;angka++){
+            //     console.log("cetak angka ke : "+angka);
+            // } 
+
+            // for loop cetak angka 10-1
+            // var angka=10;
+            // for(angka;angka>=1;angka--){
+            //     console.log("cetak angka ke : "+angka);
+            // } 
+
+            // for loop cetak angka genap 1-10
+            // var angka=1;
+            // for(angka;angka<=10;angka++){
+
+            //     if(angka % 2 == 0){
+            //         console.log("cetak angka ke " + angka);
+            //     }
+            // } 
+
+            // for loop cetak angka ganjil 1-10
+            // var angka=1;
+            // for(angka;angka<=10;angka++){
+
+            //     if(angka % 2 != 0){
+            //         console.log("cetak angka ke " + angka);
+            //     }
+            // } 
+
+            //cetak huruf vokal (a,i,u,e,o) pada kalimat "bootcamp cimb niaga"
+            // var kalimat = "bootcamp cimb niaga";
+            // var kalimat_low = kalimat.toLocaleLowerCase();
+            // console.log("cetak huruf vokal pada kalimat 'bootcamp cimb niaga'");
+            // for(var i=0;i<kalimat.length;i++){
+            //     if(kalimat_low[i]=='a' || 
+            //     kalimat_low[i]=='i' ||
+            //     kalimat_low[i]=='u' ||
+            //     kalimat_low[i]=='e' ||
+            //     kalimat_low[i]=='o'){
+            //         console.log("cetak huruf vokal karakter ke-"+i+" : " + kalimat[i]);
+            //     }
+
+            // }
+
+            //cetak huruf konsonan (a,i,u,e,o) pada kalimat "bootcamp cimb niaga"
+            // var kalimat = "bootcamp cimb niaga";
+            // var kalimat_low = kalimat.toLocaleLowerCase();
+            // console.log("cetak huruf konsonan pada kalimat 'bootcamp cimb niaga'");
+            // for(var i=0;i<kalimat.length;i++){
+            //     if(kalimat_low[i]!='a' && 
+            //     kalimat_low[i]!='i' &&
+            //     kalimat_low[i]!='u' &&
+            //     kalimat_low[i]!='e' &&
+            //     kalimat_low[i]!='o' &&
+            //     kalimat_low[i]!=' '){
+            //         console.log("cetak huruf konsonan karakter ke-"+i+" : " + kalimat[i]);
+            //     }
+
+            // }
+
+            //cetak mendatar huruf konsonan (a,i,u,e,o) pada kalimat "bootcamp cimb niaga"
+            var kalimat = "bootcamp cimb niaga";
+            var kalimat_low = kalimat.toLocaleLowerCase();
+            var kalimat_final = '';
+            console.log("cetak huruf konsonan pada kalimat 'bootcamp cimb niaga'");
+            for(var i=0;i<kalimat.length;i++){
+                if(kalimat_low[i]!='a' && 
+                kalimat_low[i]!='i' &&
+                kalimat_low[i]!='u' &&
+                kalimat_low[i]!='e' &&
+                kalimat_low[i]!='o' &&
+                kalimat_low[i]!=' '){
+                    kalimat_final = kalimat_final+ kalimat[i];
+                }
+            }
+            console.log("cetak huruf konsonan mendatar : "+kalimat_final);
+
+        </script>
+    </body>
+
+</html>
