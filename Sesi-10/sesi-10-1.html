@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            Sesi 10-1
+        </title>
+
+    </head>
+    <body>
+        <script>
+            var binatang = ["Singa","Harimau","Puma"];
+            console.log(binatang[0]);
+            console.log(binatang[1]);
+
+            //menambahkan index array
+            binatang.push("ayam");
+            console.log(binatang);
+            binatang.pop();
+            console.log(binatang);
+            binatang.unshift("sapi");
+            console.log(binatang);
+            binatang.shift();
+            console.log(binatang);
+            console.log(binatang.join());
+            console.log(binatang.sort());
+            console.log(binatang.slice(0,1));
+
+            var hewan = ['singa','harimau','kuda'];
+
+            hewan.splice(1,2,'kerbau','kancil');
+            console.log(hewan);
+
+            var kalimat  = "bootcamp cimb niaga";
+            var kata  = kalimat.split(" ");
+            console.log(kata);
+
+            //kalimat = "bootcamp cimb niaga";
+            //hasil = "bootcamp bank cimb niaga"
+            var kalimat_bootcamp = "bootcamp cimb niaga";
+            var kalimat_goal1 = kalimat_bootcamp.substr(0,8)+" bank "+kalimat_bootcamp.substr(9,);
+            var kalimat_goal2_array = kalimat_bootcamp.split(" ");
+            var kalimat_goal2 = kalimat_goal2_array.splice(1,0,"bank");
+            console.log(kalimat_goal1);
+            console.log(kalimat_goal2_array.join(" "));
+            
+
+        </script>
+    </body>
+
+</html>
