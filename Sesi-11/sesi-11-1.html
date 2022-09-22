@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <title>
+            Sesi-11-1
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <script>
+            var supermanObj = {
+                id: "1a2b3c",
+                name: "supermen",
+                age: 200,
+                favorites: [
+                    "coding",
+                    "reading", 
+                    {
+                        sports: ["parkour", "hill climbing"]
+                    }, 
+                    {
+                        address1: {
+                            street: "Planet Krypton1",
+                            zipCode: 542132423425
+                        }
+                    }
+
+                ],
+                address: {
+                    street: "Planet Krypton",
+                    zipCode: 54213
+                }
+            };
+
+            console.log(supermanObj.name); //"Superman"
+            console.log(supermanObj.age); // 200
+            console.log(supermanObj.favorites[0]); //"coding"
+            console.log(supermanObj.favorites[3].address1.zipCode); //"coding"
+            console.log(supermanObj.favorites[2].sports); // ["parkour","hill climbing"]
+            console.log(supermanObj.favorites[2].sports[0]); //"parkour"
+            console.log(supermanObj.address); //{street:"Planet Krypton",zipcode:5413}
+            console.log(supermanObj.address.zipCode); //54213
+            supermanObj.name="rijal";
+            console.log(supermanObj.name);
+            supermanObj.favorites[0]="tidur";
+            console.log(supermanObj.favorites[0]);
+            supermanObj.keybaru = "keybaru";
+            console.log(supermanObj.keybaru);
+        </script>
+
+    </body>
+
+</html>
