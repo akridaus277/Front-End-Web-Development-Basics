@@ -1,0 +1,71 @@
+@media screen and (orientation: landscape) {
+    body {
+        flex-direction: row;
+        background-color: aqua;
+    }
+    .flex-container {
+        max-width: 800px;
+    }
+    .mediaCheck::after{
+        content: "Media Landscape";
+        font-weight: bold;
+    }
+
+}
+@media screen and (orientation: portrait) {
+    .mediaCheck::after{
+        content: "Media Portrait";
+        font-weight: bold;
+    }
+    body {
+        flex-direction: column;
+        background-color:khaki;
+    }
+    .flex-container {
+        max-width: 500px;
+    }
+    
+}
+
+@media print {
+    .mediaCheck::after{
+        content: "Media Print";
+        font-weight: bold;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    body{
+        background-color: white;
+        -webkit-print-color-adjust : exact !important;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.box {
+    display: flex;
+    height: 200px;
+    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    margin: 20px;
+    background-color: orange;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    
+}
