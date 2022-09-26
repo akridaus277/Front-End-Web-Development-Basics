@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Sesi 14-1
+        </title>
+        <!-- <link rel="stylesheet" type="text/css" href="latihan-12-1.css"> -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <main class="container mt-4">
+            <div class="column mb-3">
+                <button class="btn btn-primary" id="button1">click me!</button>
+                <button class="btn btn-primary" id="button2">double click me!</button>
+                <button class="btn btn-primary" id="button3">hover me!</button>
+            </div>
+            <div class="column mb-3">
+                <label for="input1">input1</label>
+                <input type="text" id="input1" class="col-3">
+                <label for="input2">input2</label>
+                <input type="text" id="input2" class="col-3">
+                <label for="input3">input3</label>
+                <input type="text" id="input3" class="col-3">
+            </div>
+            <div class="column mb-3">
+                <label for="select1">select1</label>
+                <select  id="select1" class="col-3">
+                    <option value="balmond">balmond</option>
+                    <option value="akai">akai</option>
+                    <option value="nana">nana</option>
+                </select>
+                
+            </div>
+            <div class="column mb-3">
+                <div id="textOrigin">TEXT ASLI</div>
+                <button id="buttonCopyText" class="btn btn-primary">Click me to copy the text above</button>
+                <div id="textDestination"></div>                
+            </div>
+            <div class="column">
+                <label for="optionOrigin">Choose Your Hero</label>
+                <select  id="optionOrigin" class="col-3">
+                    <option disabled selected value> -- Select Your Hero -- </option>
+                    <option value="Marci">Marci</option>
+                    <option value="Mirana">Mirana</option>
+                    <option value="Dragon Knight">Dragon Knight</option>
+                    <option value="Crystal Maiden">Crystal Maiden</option>
+                </select> 
+                <div id="optionDestination"></div>  
+
+            </div>
+
+        </main>
+
+        <script >
+            $('#button1').on('click', function () {
+                alert("button1 says : you clicked me!");
+            });
+
+            // $('#button1').click(function (e) {     e.preventDefault();     alert("button1
+            // says : you clicked me!"); }); $('#button2').on('dblclick',function(){
+            // alert("button2 says : you double clicked me!"); });
+
+            $('#button2').dblclick(function (e) {
+                e.preventDefault();
+                alert("button2 says : you clicked me!");
+            });
+            $('#button3').mouseover(function () {
+                console.log('mouseover');
+                $('#button3').removeClass('btn-primary');
+                $('#button3').addClass('btn-danger');
+            });
+            $('#button3').mouseleave(function () {
+                console.log('mouseleave');
+                $('#button3').removeClass('btn-danger');
+                $('#button3').addClass('btn-primary');
+            });
+            $('#input1').keypress(function (e) {
+                console.log('keypress');
+            });
+            $('#input2').focus(function (e) { 
+                e.preventDefault();
+                console.log('you focused on input2');
+            });
+            $('#input3').blur(function (e) { 
+                e.preventDefault();
+                console.log('you blured from input3');
+            });
+            $('#select1').change(function (e) { 
+                e.preventDefault();
+                console.log('you changed your option to ',this.value);
+            });
+            $('#buttonCopyText').click(function (e) { 
+                e.preventDefault();
+                $('#textDestination').text($('#textOrigin').text());
+                // console.log($('#textOrigin').text());
+
+            });
+            $('#optionOrigin').change(function (e) { 
+                e.preventDefault();
+                $('#optionDestination').text("You Chose "+this.value);
+            });
+        </script>
+
+    </body>
+
+</html>
