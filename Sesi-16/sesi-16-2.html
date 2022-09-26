@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Sesi 15-5
+        </title>
+        <!-- <link rel="stylesheet" type="text/css" href="sesi-15-1.css"> -->
+        <!-- <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"> -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+        <style>
+            li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+
+li.show {
+  height: 2em;
+  margin: 2px 0;
+}
+.fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  height: 2em;
+}
+.fade li.show {
+  opacity: 1;
+}
+.slide-fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slide-fade li.show {
+  opacity: 1;
+}
+.swing {
+  perspective: 100px;
+}
+.swing li {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.swing li.show {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+.swing li {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+
+        </style>
+    </head>
+    <body>
+        <!-- <div>Fade</div>
+        <ul id="list" class="fade">
+            <li class="show">List item</li>
+            <li class="show">List item</li>
+          </ul>
+          <button id="add-to-list">Add a list item</button>
+
+          <div>Slide down & Fade</div>
+          <ul id="list" class="slide-fade">
+              <li class="show">List item</li>
+              <li class="show">List item</li>
+            </ul>
+            <button id="add-to-list">Add a list item</button> -->
+
+            <div>Swinging In</div>
+            <ul id="list" class="swing">
+                <li class="show">List item</li>
+                <li class="show">List item</li>
+              </ul>
+              <button id="add-to-list">Add a list item</button>
+
+        <script>
+            document.getElementById('add-to-list').onclick = function() {
+  var list = document.getElementById('list');
+  var newLI = document.createElement('li');
+  newLI.innerHTML = 'A new item';
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.className = newLI.className + " show";
+  }, 10);
+}
+        </script>
+    </body>
+
+</html>

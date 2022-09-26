@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Sesi 15-6
+        </title>
+        <!-- <link rel="stylesheet" type="text/css" href="sesi-15-1.css"> -->
+        <!-- <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"> -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+        <style>
+            .clock {
+  border : solid 3px black;
+  border-radius: 50%;
+  background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 90%;
+  height: 20em;
+  /* padding-bottom: 31%; */
+  position: relative;
+  width: 20em;
+}
+
+.clock.simple:after {
+  background: red;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8%;
+  height: 8%;
+  z-index: 10;
+}
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.minutes-container{
+    z-index: 3;
+}
+.hours-container{
+    z-index: 2;
+}
+.seconds-container{
+    z-index: 4;
+}
+.hours {
+  background: #000;
+  height: 22%;
+  left: 48.75%;
+  position: absolute;
+  top: 28%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+.minutes {
+  background: #000;
+  height: 35%;
+  left: 49%;
+  position: absolute;
+  top: 15%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+.seconds {
+  background: red;
+  height: 48%;
+  left: 49.5%;
+  position: absolute;
+  top: 12%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  
+}
+.logo {
+  height: 48%;
+  left: 28%;
+  position: absolute;
+  top: 25%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 1;
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+/* .minutes-container {
+  animation: rotate 3600s infinite linear;
+}
+.seconds-container {
+  animation: rotate 60s infinite linear;
+} */
+/* .minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+} */
+.minutes-container {
+  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+}
+.seconds-container {
+  transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;font-weight: bold;font-size: xx-large;">Clock</div>
+        <div style="display: flex;justify-content: center;align-items: center;">
+            <article class="clock simple">
+                <div class="logo-container">
+                    <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/CIMB_Niaga_logo.svg/1200px-CIMB_Niaga_logo.svg.png?20190222060651" width=150px></div>
+                  </div>
+                <div class="hours-container">
+                  <div class="hours"></div>
+                </div>
+                <div class="minutes-container"> 
+                  <div class="minutes"></div>
+                </div>
+                <div class="seconds-container">
+                  <div class="seconds"></div>
+                </div>
+              </article>
+        </div>
+        
+        <script>
+/*
+  * Starts any clocks using the user's local time
+  * From: cssanimation.rocks/clocks
+  */
+  initLocalClocks();
+  setUpMinuteHands();
+  moveSecondHands();
+  moveMinuteHands();
+  function initLocalClocks() {
+  // Get the local time using JS
+  var date = new Date;
+  var seconds = date.getSeconds();
+  var minutes = date.getMinutes();
+  var hours = date.getHours();
+
+  // Create an object with each hand and it's angle in degrees
+  var hands = [
+    {
+      hand: 'hours',
+      angle: (hours * 30) + (minutes / 2)
+    },
+    {
+      hand: 'minutes',
+      angle: (minutes * 6)
+    },
+    {
+      hand: 'seconds',
+      angle: (seconds * 6)
+    }
+  ];
+  // Loop through each of these hands to set their angle
+  for (var j = 0; j < hands.length; j++) {
+    var elements = document.querySelectorAll('.' + hands[j].hand);
+    for (var k = 0; k < elements.length; k++) {
+        elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+        elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
+        // If this is a minute hand, note the seconds position (to calculate minute position later)
+        if (hands[j].hand === 'minutes') {
+          elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
+        }
+    }
+  }
+}
+/*
+ * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
+ */
+ function setUpMinuteHands() {
+  // Find out how far into the minute we are
+  var containers = document.querySelectorAll('.minutes-container');
+  var secondAngle = containers[0].getAttribute("data-second-angle");
+  if (secondAngle > 0) {
+    // Set a timeout until the end of the current minute, to move the hand
+    var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
+    setTimeout(function() {
+      moveMinuteHands(containers);
+    }, delay);
+  }
+}
+
+/*
+ * Do the first minute's rotation
+ */
+function moveMinuteHands(containers) {
+  for (var i = 0; i < containers.length; i++) {
+    containers[i].style.webkitTransform = 'rotateZ(6deg)';
+    containers[i].style.transform = 'rotateZ(6deg)';
+  }
+  // Then continue with a 60 second interval
+  setInterval(function() {
+    for (var i = 0; i < containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 12;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+    }
+  }, 60000);
+}
+/*
+ * Move the second containers
+ */
+ function moveSecondHands() {
+  var containers = document.querySelectorAll('.seconds-container');
+  setInterval(function() {
+    for (var i = 0; i < containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 6;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+    }
+  }, 1000);
+}
+
+        </script>
+    </body>
+
+</html>
