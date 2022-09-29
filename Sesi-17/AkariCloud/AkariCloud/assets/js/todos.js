@@ -185,8 +185,6 @@ function activeFilterTodo(filter_element){
 function searchTodo(){
     
     input_search = document.getElementById('search-todo').value;
-
-    console.log(input_search);
     getAll();
 }
 
