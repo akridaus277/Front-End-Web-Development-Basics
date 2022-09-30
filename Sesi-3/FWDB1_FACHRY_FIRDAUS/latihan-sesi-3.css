@@ -1,0 +1,62 @@
+body{
+    height: 200vh;
+    margin: 0;
+    padding: 0;
+}
+div.sticky {
+    border: 2px solid violet;
+    background-color: violet;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+div.static{
+    border: 2px solid red;
+    color: red;
+    margin: 30px;
+    padding: 30px;
+    position: static; 
+    height: 100%;
+}
+div.relative-blue{
+    border: 1px solid blue;
+    color: blue;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+div.relative-orchid{
+    border: 1px solid orchid;
+    color: orchid;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+div.relative-brown{
+    border: 1px solid brown;
+    color: brown;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+div.fixed{
+    border: 1px solid green;
+    color: green;
+    margin: 30px;
+    padding: 30px;
+    position: fixed;
+    bottom: 5px;
+}
+div.absolute {
+    position: absolute;
+    top: 58px;
+    right: 40px;
+    width: 100px;
+    height: 40px;
+    border: 3px solid orange;
+  }
